@@ -1080,7 +1080,7 @@ print('%.8f' % te_float1)
 # cmd = ''' push action uosio.union updaterate '["{0}", "{1}"]' -p pramuziliuos@active'''.format(1, 0)
 # print(cmd)
 
-number = 4000000.0
+number = 3700000.0
 print("-------------------------------")
 a = 0
 print(sys.getsizeof(int, a))
@@ -1096,12 +1096,12 @@ while True:
     # if i > 90:
     #     break
 
-    if send * 0.1 < 1000.0:
+    if send * 0.1 < 500.0:
         break
-    print('%.8f\t\t%.8f\t\t%.8f' % (send * 0.1, number, sum))
+    # print('%.8f\t\t%.8f\t\t%.8f' % (send * 0.1, number, sum))
 
-print(i)
-print(sum)
+# print(i)
+# print(sum)
 
 # sum = 0
 # i = 0
@@ -1115,3 +1115,7 @@ print(sum)
 #         break
 #
 # print(sum)
+
+# 列表推导式探索
+new_list = [i*i for i in range(10) if i % 2 == 1]
+print(new_list)

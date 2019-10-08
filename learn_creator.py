@@ -7,7 +7,6 @@
 
 params = [1234, '1234', [1, 2, 3, 4, 5], set([1, 2, 3, 4]), {1: 1, 2: 2, 3: 3, 4: 4}, (1, 2, 3, 4)]
 
-
 def is_iterable(param):
     try:
         iter(param)
@@ -17,25 +16,27 @@ def is_iterable(param):
 
 
 for param in params:
-    print('{} is iterable? {}'.format(param, is_iterable(param)))
+    pass 
+    # print('{} is iterable? {}'.format(param, is_iterable(param)))
 
 import os
 import psutil
 
 
 def show_memory_info(hint):
-    pid = os.getpgid()
-    p = psutil.Process(pid)
-    info = p.memory_full_info()
-    memory = info.uss / 1024. / 1024
-    print('{} memory used:{}MB'.format(hint, memory))
+    pass
+    # pid = os.getpgid()
+    # p = psutil.Process(pid)
+    # info = p.memory_full_info()
+    # memory = info.uss / 1024. / 1024
+    # print('{} memory used:{}MB'.format(hint, memory))
 
 
 def test_iterator():
     show_memory_info('initing iterator')
     list_1 = [i for i in range(100000000)]
     show_memory_info('after iterator initiated')
-    print(sum(list_1))
+    # print(sum(list_1))
     show_memory_info('after sum called')
 
 
@@ -43,7 +44,7 @@ def test_generator():
     show_memory_info('initing generator')
     list_2 = [i for i in range(100000000)]
     show_memory_info('after generator initiated')
-    print(sum(list_2))
+    # print(sum(list_2))
     show_memory_info('after sum called')
 
 
@@ -57,20 +58,23 @@ def generator(k):
 gen_1 = generator(1)
 gen_3 = generator(3)
 
-print(gen_1)
-print(gen_3)
-
+# print(gen_1)
+# print(gen_3)
 
 def get_sum(n):
     sum_1, sum_3 = 0, 0
     for i in range(n):
         next_1 = next(gen_1)
         next_3 = next(gen_3)
-        print('next_1 = {},next_3 = {}'.format(next_1, next_3))
+        # print('next_1 = {},next_3 = {}'.format(next_1, next_3))
         sum_1 += next_1
         sum_3 += next_3
-        print('sum_1 = {},sum_3 = {}'.format(sum_1, sum_3))
-    print(sum_1 * sum_1, sum_3)
+        # print('sum_1 = {},sum_3 = {}'.format(sum_1, sum_3))
+    # print(sum_1 * sum_1, sum_3)
 
+def suqare(n):
+    for i in range(n):
+        yield i ** 2
 
-get_sum(12)
+for i in suqare(8):
+    print(i)
