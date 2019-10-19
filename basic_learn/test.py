@@ -1121,5 +1121,6 @@ new_list = [i*i for i in range(10) if i % 2 == 1]
 print(new_list)
 
 print("-----------------------------------------")
-str = eval("hello world")
+print(type('%.4f' % (100/1.02)))
 print(str)
+
