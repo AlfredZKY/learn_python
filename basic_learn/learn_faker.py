@@ -8,7 +8,7 @@
 from faker import Faker
 
 # 实例化一个对象
-faker = Faker()
+# faker = Faker()
 
 # 简体中文：zh_CN
 # 繁体中文：zh_TW
