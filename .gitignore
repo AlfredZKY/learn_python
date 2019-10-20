@@ -5,3 +5,4 @@ main
 wechat
 wechat.png
 *.log
+*.npy
