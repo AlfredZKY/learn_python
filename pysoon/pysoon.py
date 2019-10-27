@@ -3,7 +3,7 @@
 import pysnooper
 import random
 
-@pysnooper.snoop(r'.\basic_learn\log\file.log')
+@pysnooper.snoop(r'.\pysoon\log\file.log')
 def number_to_bits(number):
     if number:
         bits = []
