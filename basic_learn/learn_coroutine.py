@@ -39,6 +39,7 @@ def consumer():
         time.sleep(1)
         r = '200 OK'
 
+
 def produce(c):
     c.__next__()
     n = 0
@@ -49,7 +50,7 @@ def produce(c):
         print('[PRODUCER] Consumer return: %s' % r)
     c.close()
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     c = consumer()
     produce(c)
-

@@ -44,8 +44,8 @@ def get_allowed_mem():
         a.append(i)
         b.add(i)
         c[i] = i
-        print(f'{len(a)},sys.getsizeof(a) = {sys.getsizeof(a)}', '\t' \
-            f'{len(b)},sys.getsizeof(b) = {sys.getsizeof(b)}', '\t' f'{len(c)},sys.getsizeof(c) = {sys.getsizeof(c)}')
+        print(f'{len(a)},sys.getsizeof(a) = {sys.getsizeof(a)}', '\t'
+              f'{len(b)},sys.getsizeof(b) = {sys.getsizeof(b)}', '\t' f'{len(c)},sys.getsizeof(c) = {sys.getsizeof(c)}')
 
 
 # 静态创建对象

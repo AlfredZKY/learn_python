@@ -5,7 +5,11 @@
 # @Date:2019/8/23
 # @Desc:
 
-params = [1234, '1234', [1, 2, 3, 4, 5], set([1, 2, 3, 4]), {1: 1, 2: 2, 3: 3, 4: 4}, (1, 2, 3, 4)]
+import psutil
+import os
+params = [1234, '1234', [1, 2, 3, 4, 5], set(
+    [1, 2, 3, 4]), {1: 1, 2: 2, 3: 3, 4: 4}, (1, 2, 3, 4)]
+
 
 def is_iterable(param):
     try:
@@ -16,11 +20,8 @@ def is_iterable(param):
 
 
 for param in params:
-    pass 
+    pass
     # print('{} is iterable? {}'.format(param, is_iterable(param)))
-
-import os
-import psutil
 
 
 def show_memory_info(hint):
@@ -61,6 +62,7 @@ gen_3 = generator(3)
 # print(gen_1)
 # print(gen_3)
 
+
 def get_sum(n):
     sum_1, sum_3 = 0, 0
     for i in range(n):
@@ -72,9 +74,11 @@ def get_sum(n):
         # print('sum_1 = {},sum_3 = {}'.format(sum_1, sum_3))
     # print(sum_1 * sum_1, sum_3)
 
+
 def suqare(n):
     for i in range(n):
         yield i ** 2
+
 
 for i in suqare(8):
     print(i)

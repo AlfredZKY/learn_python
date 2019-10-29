@@ -7,14 +7,15 @@ from matplotlib import pyplot as plt
 d = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
 print(d)
 # 获取文本txt
-text = open(path.join(d,r'file/legend1900.txt')).read()
+text = open(path.join(d, r'file/legend1900.txt')).read()
 
 # 生成词云，背景色为灰色
-wc = WordCloud(scale=2,max_font_size=100,background_color='#383838',colormap='Blues')
+wc = WordCloud(scale=2, max_font_size=100,
+               background_color='#383838', colormap='Blues')
 wc.generate_from_text(text)
 
 # 显示图像
-plt.imshow(wc,interpolation='bilinear')
+plt.imshow(wc, interpolation='bilinear')
 plt.axis('off')
 plt.tight_layout()
 

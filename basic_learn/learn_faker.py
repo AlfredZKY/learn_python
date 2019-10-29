@@ -30,6 +30,3 @@ print(faker.providers)
 print('name:', faker.name)
 print('address:', faker.address)
 print('text:', faker.text)
-
-
-

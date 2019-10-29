@@ -34,7 +34,8 @@ for items in eth:
         i += 1
         continue
 
-    print(period, total, limit_price)  # , type(period), type(total), type(limit_price))
+    # , type(period), type(total), type(limit_price))
+    print(period, total, limit_price)
     i += 1
 
 # import json
