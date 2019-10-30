@@ -16,7 +16,10 @@ import random
 # 1.减少代码的重复性
 # 2.模块化代码
 
-square = lambda x: x ** 2
+
+def square(x): return x ** 2
+
+
 print(square(3))
 
 # 匿名函数可以用在常规函数不能用的地方，比如列表生成式中

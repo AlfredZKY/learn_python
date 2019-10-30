@@ -13,7 +13,6 @@ print(li.__sizeof__())
 print(tu.__sizeof__())
 
 
-
 li = [1, 2, 3, 4]
 tu = (1, 2, 3, 4)
 

@@ -17,7 +17,8 @@ def wc_english():
     text = open(path.join(d, r'world_cloud\file\legend1900.txt')).read()
 
     # 读取背景图片
-    background_Image = np.array(Image.open(path.join(d, r'world_cloud\mask1900.jpg')))
+    background_Image = np.array(Image.open(
+        path.join(d, r'world_cloud\mask1900.jpg')))
 
     # 提取背景图片颜色
     img_color = ImageColorGenerator(background_Image)
@@ -38,8 +39,8 @@ def wc_english():
 
     # 删除词频出现的one
     # 获取文本词排序，来调整stopword
-    process_word = WordCloud.process_text(wc,text)
-    sort = sorted(process_word.items(),key=lambda e:e[1],reverse=True)
+    process_word = WordCloud.process_text(wc, text)
+    sort = sorted(process_word.items(), key=lambda e: e[1], reverse=True)
     stopwords.add('one')
 
     # 生成词云
@@ -60,8 +61,9 @@ def wc_english():
     plt.show()
 
 
-def grey_color_func(word,font_size,position,orientation,rando_state=None,**kwargs):
-    return "hsl(0,0%%,%d%%)" % random.randint(10,100)
+def grey_color_func(word, font_size, position, orientation, rando_state=None, **kwargs):
+    return "hsl(0,0%%,%d%%)" % random.randint(10, 100)
+
 
 if __name__ == "__main__":
     wc_english()

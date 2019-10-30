@@ -7,6 +7,7 @@
 
 
 # 小数点后取2位(四舍五入)的方法 round函数有缺陷，尽量不采用
+from decimal import Decimal
 a = 1.23456
 b = 2.35
 c = 3.5
@@ -33,7 +34,6 @@ print(type(res))
 
 print("--------------------------------------")
 # decimal函数 看结果也是有时进位，有时不进位，不推荐使用
-from decimal import Decimal
 
 aa = Decimal('5.026').quantize(Decimal('0.00'))
 bb = Decimal('3.555').quantize(Decimal('0.00'))
