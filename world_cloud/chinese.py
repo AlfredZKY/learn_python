@@ -2,6 +2,8 @@ import chardet
 import jieba
 import os
 
+# chardet 模块应用背景，如果要对一个大文件进行编码识别，
+# 使用这种高级的方法，可以只读一部，去判别编码方式从而提高检测速度。
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 from os import path
 
