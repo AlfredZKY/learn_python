@@ -25,6 +25,7 @@ def wc_english():
 
     # 设置英文停止词,用词云自带的停止词
     stopwords = set(STOPWORDS)
+    stopwords.add('one')
     wc = WordCloud(
         margin=2,  # 设置页面边缘
         mask=background_Image,  # 设置背景图片
@@ -41,7 +42,6 @@ def wc_english():
     # 获取文本词排序，来调整stopword
     process_word = WordCloud.process_text(wc, text)
     sort = sorted(process_word.items(), key=lambda e: e[1], reverse=True)
-    stopwords.add('one')
 
     # 生成词云
     wc.generate_from_text(text)
@@ -49,7 +49,7 @@ def wc_english():
     # 根据图片色设置背景色,根据图片色彩绘制词云文字颜色
     # wc.recolor(color_func=img_color)
     wc.recolor(color_func=grey_color_func)
-    # 显示图像
+    # 显示图像 interpolation 内插入法 bilinear双线性
     plt.imshow(wc, interpolation='bilinear')
     plt.axis('off')
     plt.tight_layout()
@@ -62,7 +62,7 @@ def wc_english():
 
 
 def grey_color_func(word, font_size, position, orientation, rando_state=None, **kwargs):
-    return "hsl(0,0%%,%d%%)" % random.randint(10, 100)
+    return "hsl(0,0%%,%d%%)" % random.randint(50, 100)
 
 
 if __name__ == "__main__":
