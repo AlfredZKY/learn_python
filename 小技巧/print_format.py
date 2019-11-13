@@ -2,7 +2,7 @@
 @Description: 
 @Author: zky
 @Date: 2019-11-09 09:53:34
-@LastEditTime: 2019-11-09 14:18:56
+@LastEditTime: 2019-11-13 16:29:25
 @LastEditors: huacong
 '''
 
@@ -48,10 +48,10 @@ def esc(code=0):
 
 
 def print_color_font():
-    print(esc('1;31;40')+'Error:'+esc()+'import')
+    print(esc('1;33;40')+'Error:'+esc()+'import')
     print("\033[1;32;40m================signing====================\033[m")
     print('This is a \033[1;35m test \033[0m!')
-    print('\033[1;31;40m')
+    print('\033[1;35;40m')
     print('*' * 50)
     print('*HOST:\t', 2002)
     print('*URI:\t', 'http://127.0.0.1')
@@ -67,5 +67,5 @@ def print_color_font():
 # print(term.red("hello"), term.green("world"))
 
 if __name__ == '__main__':
-    # print_color_font()
-    pass
+    print_color_font()
+    
