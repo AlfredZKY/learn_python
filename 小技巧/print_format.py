@@ -2,12 +2,14 @@
 @Description: 
 @Author: zky
 @Date: 2019-11-09 09:53:34
-@LastEditTime: 2019-11-13 16:29:25
+@LastEditTime: 2019-11-14 15:30:27
 @LastEditors: huacong
 '''
 
 # 此方法与平台无关（ANSI序列不会在支持它们的终端上修改），并允许您在字符串中使用原始ANSI序列，以及为您提供颜色定义。
 import colorama
+import pprint
+
 colorama.init()
 
 '''
@@ -68,4 +70,9 @@ def print_color_font():
 
 if __name__ == '__main__':
     print_color_font()
+   
+    my_mapping = [{'a': 23, 'b': 42, 'c': 0xc0ffee},{'a': 231, 'b': 42, 'c': 0xc0ffee}]
+    print(my_mapping)
+    # pprint
+    pprint.pprint(my_mapping,width=1)
     

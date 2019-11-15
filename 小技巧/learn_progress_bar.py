@@ -18,19 +18,23 @@ def tqdm_bar():
 total = 1000
 widgets = ['Progress: ',Percentage(), ' ', Bar('#'),' ', Timer(),
            ' ', ETA(), ' ', FileTransferSpeed()]
-pbar = ProgressBar(widgets=widgets, maxval=10*total).start()
-
-
-def dosomework():
-        time.sleep(0.01)
+pbar = ProgressBar(widgets=widgets, maxval=10*total).start()  
 
 def progress_bar():
     total = 1000
     for i in range(total):
         pbar.update(10*i + 1)
-        dosomework()
+        time.sleep(0.01)
 
+
+def my_process_bar(percent=0, width=30):
+    left = width * percent // 100
+    right = width - left
+    print('[', '#' * left, ' ' * right, ']',f'{percent:.0f}%', sep='', end='', flush=True)
 
 if __name__ == '__main__':
     progress_bar()
     pbar.finish()
+    # for i in range(101):
+    #     my_process_bar(i)
+    # sleep(0.1)
