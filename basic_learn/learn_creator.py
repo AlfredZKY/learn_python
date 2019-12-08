@@ -80,5 +80,6 @@ def suqare(n):
         yield i ** 2
 
 
-for i in suqare(8):
-    print(i)
+if __name__=='__main__':
+    for i in suqare(8):
+        print(i)
