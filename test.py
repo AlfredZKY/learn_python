@@ -10,13 +10,24 @@
 #     print('第{0}天产出的 psersent is {1}'.format(i, sum/100000000))
 
 
-def fib():
-    a, b = 0, 1
-    while 1:
-        if b > 100000000000:
-            break
-        yield b
-        a, b = b, a+b
+# def fib():
+#     a, b = 0, 1
+#     while 1:
+#         if b > 100000000000:
+#             break
+#         yield b
+#         a, b = b, a+b
 
-for i in fib():
-    print(i," ")
+# for i in fib():
+#     print(i," ")
+
+import lxml.html
+
+etree = lxml.html.etree
+
+with open('F:/my_project/learn_python/000737+2018年年度报告+2019-03-05+1205874756.html','r',encoding='utf8') as f:
+    page = f.read()
+    html = etree.HTML(page)
+    ps = html.xpath('//P')
+    for item in ps:
+        print(item.string())
