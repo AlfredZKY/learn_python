@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-    "python.pythonPath": "/home/zky/anaconda3/bin/python",
-=======
-    "python.pythonPath": "/usr/bin/python3",
->>>>>>> 12203ac55bede5d5e05ae0e0db5b392180e20b2f
-    "editor.mouseWheelZoom": true
+  "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+  "editor.mouseWheelZoom": true
 }
