@@ -26,7 +26,7 @@ async def execute(x):
     return x
 
 # # 返回一个协程对象
-# coroutine = execute(1)
+coroutine = execute(1)
 
 # print('Coroutine:',coroutine)
 # print('After calling execute')
