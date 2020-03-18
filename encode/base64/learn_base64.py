@@ -2,7 +2,7 @@ from base64 import b64decode
 from base64 import b64encode
 
 sourece = ["www.huawei.com","www.juejie.im"]
-code = ['d3d3Lmh1YXdlaS5jb20=','d3d3Lmp1ZWppZS5pbQ==']
+code = ['d3d3Lmh1YXdlaS5jb20=','d3d3Lmp1ZWppZS5pbQ==','4oCLaHR0cDovL3Rvb2wubGl1bWluZ3llLmNuL211c2ljLw==']
 
 # 编码
 for c in sourece:
