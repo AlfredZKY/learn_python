@@ -1,5 +1,6 @@
 from base64 import b64decode
 from base64 import b64encode
+import base64
 
 sourece = ["www.huawei.com","www.juejie.im"]
 code = ['d3d3Lmh1YXdlaS5jb20=','d3d3Lmp1ZWppZS5pbQ==','4oCLaHR0cDovL3Rvb2wubGl1bWluZ3llLmNuL211c2ljLw==',
@@ -15,3 +16,10 @@ for c in sourece:
 for c in code:
     str = b64decode(c).decode('utf8')
     print(str)
+
+
+print('-----------------------------------------------------------------------------')
+decode_s = base64.b64decode('IcORUmfDlcOPDsOSwr06fMKgBMKcTQ=='.encode('utf8')).decode('latin1')
+encode_s = base64.b64encode(decode_s.encode('latin1')).decode('utf8')
+print(decode_s)
+print(encode_s)
