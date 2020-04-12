@@ -1,5 +1,6 @@
-import execjs
+# import execjs
 import re
+import requests
 
 code = '''var _0x4067 = ['OMKDFsKe', 'UcKIQsKgw6d1RQ==', 'wovChS5DdBM=', 'V8OYclY7', 'w5bDn3UHwqI=', 'JDvClcKlSA==', 'FcKFQ8Khw7I3F8KbdcOiw7TDnxbCvcOCw6ddfhYCfzjCr8OBwoIaw7tuITEdw7BowrUewo5Kc8KWwpEvwrvDvBUXw4ZNJsOwGMOmwqExw4HCv8OjMMOAw7FywobCrsKJw6jDgigMI8K3w6pDPDImFnYHwoHCgRcfwqgqD2LDiA9+', 'K8KBAMKY', 'fRbCucKgAcOEwo9zc8OBw6Y=', 'wqTDqBc3CQ==', 'JS5Mwp9+w6fCqcOEJEo=', 'DXldwovDtUjCoMOwF8OuwpdwZlfDgwY=', 'O8KODMKGa3EGw7XCp8OXw6ZuwqbCrX4=', 'YsOEw4XCrHzCuMKTwpXCgFZ6wpjDr8KiwoBEd8OXwp0Hw43CvMOvSls0w7/CpMKQwqPDu0bCtU7ClcKpwpLDs2w7w6zDsEBsa8KoX8KoQsOrwrk0HcKZw6XDp8KtK8Ozw6rCiE7Cu8KLOg==', 'woXCkMKfw7M=', 'NCNdwoFcw6vCqA==', 'c35+w6TDn8Kk', 'wr7Cr8KbwpfDi0LCgy0cw5vDlg==', 'DcKkJsKuSxdpw4nCnMOow4gLw4vCmExwc2l9L2bDqMOAwrDDjkpVBMOuHivCmGXCpm9Pwp9aw7E2eMKrO8K4wpshcHMEcyHClixAw6QAccOpHcOVZ8OkVcORw7M=', 'bWg+Vw==', 'w5TDgGsYwq85wrJ0dVHDlw==', 'wqonwoRbDAM=', 'w4PDinYf', 'w7E0w4HDnsOnfQ==', 'wpJnBAc+BEM=', 'wqrCvMKfwpE=', 'KsKUCsKHTTlPw7PClsONw6ci', 'LDbCkcK5U8Kn', 'w7Mow4/Djg==', 'XsKCWcKpw6d4', 'XzvClMKXMMOwwr1YTsOkw5/DnD0awrY7cWPDoW5UU17DnsOhWMKFbcKbwrA8wrQZTxrCnnLDgMOnU8KnwonDtB1OVADDjsOVZxxYwoHDmWTCmn15w6oPwrnCqn/CtjQ='];
 (function (_0x55e958, _0x40676d) {
@@ -240,9 +241,11 @@ var _0x3c69 = function (_0x55e958, _0x40676d) {
 
 reg = re.compile(r"_0x3c69\([\s\S]{12,14}'\)")
 results = reg.findall(code)
-ctx = execjs.compile(jscode)
+# ctx = execjs.compile(jscode)
 
 for result in results:
-    value = ctx.eval(result)
-    print(result,value)
-    code = code.replace(result,"'" + value + "'")
+    # value = ctx.eval(result)
+    params = {"callback":result}
+    r = requests.get("http://127.0.0.1:3000/",params=params)
+    print(result,r.text)
+    code = code.replace(result,"'" + r.text + "'")
