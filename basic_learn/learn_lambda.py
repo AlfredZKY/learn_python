@@ -51,3 +51,11 @@ for item in new_dic:
 
 # 打印出模块所在的位置
 print(random.__file__)
+
+demo = [(1,{"date":"2015-3-2"},"jack"),(2,{"date":"2015-3-1"},"tom")] 
+print(demo)
+# demo.sort(key=lambda x: x[1].get("date"))
+# print(demo)
+
+new_demo = sorted(demo,key=lambda x: x[1].get("date"))
+print(new_demo)
