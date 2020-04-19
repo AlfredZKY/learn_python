@@ -10,3 +10,9 @@ print(result)
 print(result.group())
 print(result.group(1))
 print(result.span)
+
+
+result = re.match("^Hello .*Demo",content)
+print(result)
+print(result.group())
+print(result.span())
