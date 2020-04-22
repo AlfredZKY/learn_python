@@ -22,6 +22,7 @@ try:
     # 显式等待
     wait = WebDriverWait(brower,10)
 
+    # 等到网页刷出
     wait.until(EC.presence_of_element_located((By.ID,'content_left')))
     print(brower.current_url)
     print(brower.get_cookies())
