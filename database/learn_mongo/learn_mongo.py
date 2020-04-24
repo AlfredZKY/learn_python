@@ -105,6 +105,7 @@ def MongoDelete():
     print(result)
     print(result.deleted_count)
 
+
 if __name__ == '__main__':
     #MongoInsert()
     # MongoFind()
