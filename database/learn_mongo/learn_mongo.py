@@ -1,3 +1,12 @@
+ # 
+ # Created by preference on 2020/04/25
+ # Author: AlfredZKY
+ # Files:learn_mongo.py
+ # WorkPlace:learn_python
+ # 
+
+
+
 import pymongo
 from bson import ObjectId
 
