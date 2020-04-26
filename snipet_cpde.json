@@ -1,0 +1,71 @@
+{
+	"config logging": {
+		"prefix": "log",
+		"body": [
+			"logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s : %(message)s')",
+			"$2"
+		],
+		"description": "auto import logging"
+	},
+
+	"config import": {
+		"prefix": "import",
+		"body": [
+			"import pymongo",
+			"import requests",
+			"import logging",
+			"import json",
+			"import re",
+			"from urllib.parse import urljoin",
+			"from pyquery import PyQuery as pq",
+			"$2"
+		],
+		"description": "auto import logging"
+	},
+
+	"config import selenium ": {
+		"prefix": "selenium",
+		"body": [
+			"from selenium import webdriver",
+			"from selenium.common.exceptions import TimeoutException",
+			"from selenium.webdriver.common.keys import Keys",
+			"from selenium.webdriver.common.by import By",
+			"from selenium.webdriver.support import expected_conditions as EC ",
+			"from selenium.webdriver.support.wait import WebDriverWait",
+			"$2"
+		],
+		"description": "auto import selenium files"
+	},
+
+	"作者和时间注释": {
+		"prefix": "file",
+		"body": [
+		  " # ",
+		  " # Created by preference on $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+		  " # Author: AlfredZKY",
+		  " # Files:$TM_FILENAME",
+		  " # WorkPlace:$WORKSPACE_NAME",
+		  " # ",
+		  "$0"
+		],
+		"description": "添加作者和时间注释"
+	},
+
+	"headless": {
+		"prefix": "headless",
+		"body": [
+		  "# 开头无头模式",
+		  "options = webdriver.ChromeOptions()",
+		  "options.add_argument('--headless')",
+		  "browser = webdriver.Chrome(options=options)",
+		  "$0",
+		  "# 实例化一个浏览器对象",
+		  "TIME_OUT = 10",
+		  "browser = webdriver.Chrome(options=options)",
+		],
+		"description": "配置无头模式"
+	},
+	
+	
+	
+}

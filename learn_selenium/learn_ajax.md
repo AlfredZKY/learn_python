@@ -25,4 +25,14 @@
 | alert_is_present | 是否出现alert |
 | invisibility_of_element_located | 节点不可见 |
 
+# selenium使用场景
+    - 对于那些带有JavaScript渲染的网页，我们大多数情况下是无法直接使用requests爬取网页源码的。
+    - 有些情况下Ajax的一些请求接口可能带有一些加密参数，如token，sign等等，分析这些比较困难
+    - 通过selenium驱动浏览器的方式来另辟蹊径，实现所见即所得的爬取，也不用关心网页背后发生了什么，渲染过程，我们看到的页面就是最终浏览器
+        帮我们模拟了Ajax请求和JavaScript渲染得到的最终结果，而selenium正好也能拿到结果，相当于绕过Ajax请求分析和模拟登陆的阶段
+    - 而selenium当然也有局限性，它的爬取效率低，有写爬取需要模拟浏览器的操作，实现相对繁琐，不过在某些场景下也不失为一种有效的爬取手段
+
+
+
+
 
