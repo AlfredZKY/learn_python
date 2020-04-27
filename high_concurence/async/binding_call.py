@@ -12,6 +12,8 @@ def callback(task):
 
 coroutine = request()
 task = asyncio.ensure_future(coroutine)
+
+# 给协程绑定回调函数
 task.add_done_callback(callback)
 print('Task:',task)
 

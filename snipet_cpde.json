@@ -66,6 +66,28 @@
 		"description": "配置无头模式"
 	},
 	
-	
+	"mongo": {
+		"prefix": "mongo",
+		"body": [
+		  "import pymongo",
+		  "MONGO_CONNECT_STRING = 'mongodb://127.0.0.1:27017'",
+		  "MONGO_DB_NAME = 'movies'",
+		  "MONGO_COLLECTION_NAME='movies'",
+		  
+		  "client = pymongo.MongoClient(MONGO_CONNECT_STRING)",
+		  "db = client[MONGO_DB_NAME]",
+		  "collection = db[MONGO_COLLECTION_NAME]",
+		  "$0",
+
+		  "def save_data_to_mongo(data):",
+		  "\t # 这里实际上是 upsert 参数，如果把这个设置为 True，则可以做到存在即更新，不存在即插入的功能，更新会根据第一个参数设置的 name 字段，所以这样可以防止数据库中出现同名的电影数据。",
+		  "\t collection.update_one({",
+		  "\t 'name':data.get('name')",
+		  "\t },{",
+		  "\t '$set':data",
+		  "\t },upsert=True)"
+		],
+		"description": "配置mongo"
+	},
 	
 }

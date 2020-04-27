@@ -19,4 +19,10 @@
     - future:
         代表将来执行或没有执行的任务结果，实际上和task没有区别
     - aysnc/await 
-        它是从Python3.5才出现，专门用于定义协程，其中async定义一个协程，await用来挂起阻塞方法的执行
+        它是从Python3.5才出现，专门用于定义协程，其中async定义一个协程，await用来挂起阻塞方法的执行,协程必须挂起，才能让出其他协程执行时间
+        - 一个原生 coroutine 对象
+        - 一个由 types.coroutine 修饰的生成器，这个生成器可以返回 coroutine 对象。
+        - 一个包含 __await__ 方法的对象返回的一个迭代器。
+    - 使用情形
+        - 原则是，如果其返回的是一个coroutine对象(如async修饰的方法)，那么前面就要加await
+

@@ -1,19 +1,3 @@
-'''
-Python 中使用协程最常用的库莫过于 asyncio，所以本文会以 asyncio 为基础来介绍协程的使用。
-
-首先我们需要了解下面几个概念：
-
-event_loop：事件循环，相当于一个无限循环，我们可以把一些函数注册到这个事件循环上，当满足条件发生的时候，就会调用对应的处理方法。
-
-coroutine：中文翻译叫协程，在 Python 中常指代为协程对象类型，我们可以将协程对象注册到时间循环中，它会被事件循环调用。我们可以使用 async 关键字来定义一个方法，这个方法在调用时不会立即被执行，而是返回一个协程对象。
-
-task：任务，它是对协程对象的进一步封装，包含了任务的各个状态。
-
-future：代表将来执行或没有执行的任务的结果，实际上和 task 没有本质区别。
-
-另外我们还需要了解 async/await 关键字，它是从 Python 3.5 才出现的，专门用于定义协程。其中，async 定义一个协程，await 用来挂起阻塞方法的执行。
-'''
-
 import asyncio
 import requests
 import time
@@ -43,7 +27,7 @@ def create_loop():
     print('Task:',task)
     print('After calling loop')
 
-def create_no_loop():
+def create_coroutine_no_loop():
     task = asyncio.ensure_future(coroutine)
     print('Task:',task)
 
