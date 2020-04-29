@@ -26,3 +26,11 @@
     - 使用情形
         - 原则是，如果其返回的是一个coroutine对象(如async修饰的方法)，那么前面就要加await
 
+# async 和 await
+    - async 正常的函数执行是不会中断执行的，async可以声明可中断的函数，即异步函数，执行过程中可挂起，然后执行其他异步函数
+    - await 用于挂起异步函数
+    - asyncio.wait 和 asyncio.gather都是可以接受多个future或coro组成的列表，但不同的是，
+    asyncio.gather会将列表中不是task的coro预先封装future，而wait则不会。
+
+
+

@@ -23,7 +23,8 @@ async def seturlparameter():
         async with session.get(url,params=params) as response:
         #async with session.post(url,params=params) as response:
             print(await response.text())
-
+            
+# 并发限制
 CONCURRENCY = 5
 URL = 'https://www.baidu.com'
 semaphore = asyncio.Semaphore(CONCURRENCY)
@@ -38,7 +39,7 @@ async def scrape_api():
 async def main():
     global session
     session = aiohttp.ClientSession()
-    scrape_index_tasks = [asyncio.ensure_future(scrape_api()) for _ in range(1000)]
+    scrape_index_tasks = [asyncio.ensure_future(scrape_api()) for _ in range(100)]
     await asyncio.gather(*scrape_index_tasks)
     
 
