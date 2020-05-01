@@ -8,3 +8,5 @@ wechat.png
 *.npy
 results
 *.png
+high_concurence/pyppeteer/userdata
+._userdata
