@@ -1,44 +1,50 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @File:test_list.py
-# @Author: Feng
-# @Date:2019/8/14
-# @Desc:
+ # 
+ # Created by preference on 2020/04/28
+ # Author: AlfredZKY
+ # Files:test_list.py
+ # WorkPlace:learn_python
+ # 
 
-eth = [(1, 20, 10.0), (2, 20, 20.0), (3, 20, 300), (4, 20, 400), (5, 20, 500), (6, 20, 600), (7, 20, 700), (8, 20, 800),
-       (9, 20, 900), (10, 20, 1000), (11, 20, 1100), (12, 20, 1200)]
 
-period_items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-amount_items = [100, 200, 30, 400, 50, 600, 70, 80, 9, 100, 101, 1200]
+list1 = ['Google','Runboob',1997,2000]
+list2 = [1,2,2,3,4,5]
 
-count = 18
-i = 0
 
-for items in eth:
-    period = items[0]
-    total = items[1]
-    limit_price = items[2]
-    print(limit_price, type(limit_price))
-    if limit_price == float(10.0):
-        print("==")
+def list_Insert(nums):
+    list2.insert(0,nums)
 
-    if period != period_items[i]:
-        i += 1
-        continue
 
-    if total - count < 0:
-        i += 1
-        continue
+def update_List(index,nums):
+    list2[index]=nums
 
-    if limit_price != amount_items[i]:
-        i += 1
-        continue
+def delete_Element(index):
+    del list2[index]
 
-    # , type(period), type(total), type(limit_price))
-    print(period, total, limit_price)
-    i += 1
+def remove_Element(nums):
+    list2.remove(nums)
 
-# import json
-# with open("ulordone_node_exchange_info.json",'r') as f:
-#     load_dict = json.load(f)
-#     print(load_dict)
+def list_append(nums):
+    list2.append(nums)
+
+def pop_Element(nums):
+    res = list2.pop(nums)
+    return res
+
+def reverse_list():
+    list2.reverse()
+
+def main():
+    print(list1,list2)
+    list_Insert(19)
+    update_List(1,111)
+    delete_Element(3)
+    list_append(999)
+    remove_Element(2)
+    res = pop_Element(3)
+    print(res)
+    reverse_list()
+    print(list1,list2)
+
+
+if __name__ == '__main__':
+    main()

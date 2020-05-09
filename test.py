@@ -94,4 +94,11 @@ def threeSum():
                 k -= 1    
     print(res)
 
-threeSum()
+
+sourceStr = '175.6.2.'
+i = 2
+while True:
+    if i > 11:
+        break
+    print(sourceStr + str(i))
+    i += 1
