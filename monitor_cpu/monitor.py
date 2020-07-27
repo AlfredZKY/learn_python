@@ -56,7 +56,7 @@ def send_email (info):
 	receiver = '912111980@qq.com'
 	subject = '报警'
 	username = '912111980@qq.com'
-	password = 'ZKY19920218'
+	password = 'ZKY998'
 	msg = MIMEText(info, 'plain', 'utf-8')
 	msg['Subject'] = Header(subject, 'utf-8')
 	msg['From'] = sender
